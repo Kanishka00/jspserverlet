@@ -4,6 +4,8 @@ import com.happypaws.petcare.model.Staff;
 import com.happypaws.petcare.config.DB;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StaffDAO {
 
@@ -20,6 +22,19 @@ public class StaffDAO {
         return s;
     }
 
+    public static List<Staff> getAll() throws Exception {
+        final String SQL = "SELECT staff_id, full_name, role, email, phone, password_hash, created_at " +
+                "FROM dbo.staff ORDER BY full_name ASC";
+        try (Connection conn = DB.getConnection();
+             PreparedStatement ps = conn.prepareStatement(SQL);
+             ResultSet rs = ps.executeQuery()) {
+            List<Staff> list = new ArrayList<>();
+            while (rs.next()) {
+                list.add(map(rs));
+            }
+            return list;
+        }
+    }
 
     public static Staff findByEmail(String email) throws Exception {
         final String SQL = "SELECT staff_id, full_name, role, email, phone, password_hash, created_at " +

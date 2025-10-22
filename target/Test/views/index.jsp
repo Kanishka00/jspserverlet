@@ -62,7 +62,7 @@
 <body class="antialiased text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-950">
 
 <!-- NAV -->
-<%@ include file="header.jsp" %>
+<%@ include file="/views/common/header.jsp" %>
 
 <!-- HERO -->
 <section class="relative overflow-hidden">
@@ -240,7 +240,7 @@
 </section>
 
 <!-- CONTACT / FOOTER -->
-<%@ include file="footer.jsp" %>
+<%@ include file="/views/common/footer.jsp" %>
 
 <!-- Page-only scripts (no theme toggling here; header handles it) -->
 <script>

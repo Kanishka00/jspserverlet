@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DB {
-    private static final String url = "jdbc:sqlserver://localhost:1433;databaseName=SEP2;encrypt=false";
-    private static final String user = "sa";
+    private static final String url = "jdbc:sqlserver://localhost:1433;databaseName=Final_db;integratedSecurity=true;encrypt=false";
+    private static final String user = "sas";
     private static final String pass = "123";
 
     static{
